@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Service Providers Exercise</title>
+    <style>
+        body {
+            background: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #ff9800;
+        }
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background: #2c2c2c;
+            border-radius: 8px;
+        }
+        .question h3 {
+            margin: 0 0 10px 0;
+        }
+        .question p {
+            margin: 0;
+        }
+        .explanation {
+            margin-top: 10px;
+            padding: 10px;
+            background: #333;
+            border-radius: 8px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        pre {
+            background: #2c2c2c;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        figure {
+            margin: 20px 0;
+        }
+        figcaption {
+            text-align: center;
+            font-size: 0.9em;
+            color: #b0b0b0;
+        }
+        .note {
+            background: #333;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .checkbox input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Exercise 1 - Cloud Service Providers</h2>
+        <p>In its simplest terms, the <b>Cloud</b> is a vast network of devices that certain companies have made accessible to their customers via the internet, that has existed since 1996! Companies such as <b>Yahoo</b> and <b>Hotmail</b> offered their own <b>Software as a Service</b> models, although you may also be familiar with the capabilities of <b>Cloud Storage</b> technologies widely adopted in the contemporary computing age, such as <b>OneDrive</b> and <b>Google Drive</b>. That being said, it is not simply storage that can be provisioned in a Cloud environment, but instead whole networks, infrastructure, software and many more applications that businesses are adopting as a more cost-effective method of IT delivery.</p>
+        <p>Due to the many features and functionalities of Cloud environments, many different companies exist that provide these services, known as Cloud Service Providers (CSPs). The most popular Cloud Service Providers are Amazon Web Services (AWS) and Microsoft Azure. In this exercise, we will discuss different aspects of both <b>AWS</b> and <b>Azure</b>.</p>
+        
+        <h2>Learning Outcomes</h2>
+        <p>After completing this exercise, you should be able to:</p>
+        <ul>
+            <li>Describe Microsoft Azure DataCentres & Regions</li>
+            <li>Describe Microsoft Azure Pricing Calculator</li>
+            <li>Describe Amazon Web Services (AWS) Datacentres & Regions</li>
+            <li>Describe Amazon Web Services Pricing Calculator</li>
+        </ul>
+        
+        <h2>Your Devices</h2>
+        <p>You will be using the following devices in this lab. Please power these on now.</p>
+        <ul>
+            <li><b>PFSENSE - </b>(Virtual Firewall)</li>
+            <li><b>PLABDC01 - </b>(Windows Server 2019 - Domain Controller)</li>
+            <li><b>PLABWIN10 - </b>(Windows 10 - Domain Member)</li>
+        </ul>
+        <figure>
+            <img src="../../authenticated/images/N10-008/image-m20-c-1.jpg?v=62" alt="Practice Labs screenshot.">
+            <figcaption>Practice Labs screenshot.</figcaption>
+        </figure>
+        
+        <h3>Task 1 - Microsoft Azure DataCentres & Regions</h3>
+        <p><b>Azure</b> is Microsoft’s public cloud platform, which can create various cloud services and applications. The Azure cloud service has a global footprint of data centers worldwide, with new datacenters opening in new regions regularly. In this task, the different data center locations and regions for Microsoft Azure will be explored.</p>
+        
+        <div class="question">
+            <h4>Step 1</h4>
+            <p>Connect to <b>PLABWIN10.</b></p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-2.jpg?v=62" alt="Figure 1.1 Screenshot of PLABWIN10: Displaying the Desktop.">
+                <figcaption>Figure 1.1 Screenshot of PLABWIN10: Displaying the Desktop.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 2</h4>
+            <p>From the <b>Taskbar,</b> open <b>Microsoft Edge.</b></p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-3.jpg?v=62" alt="Figure 1.2 Screenshot of PLABWIN10: Displaying opening Microsoft Edge from the Taskbar.">
+                <figcaption>Figure 1.2 Screenshot of PLABWIN10: Displaying opening Microsoft Edge from the Taskbar.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 3</h4>
+            <p>In <b>Microsoft Edge,</b> open a new tab and browse to the following website:</p>
+            <pre><code>https://infrastructuremap.microsoft.com/explore</code></pre>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-4.jpg?v=62" alt="Figure 1.3 Screenshot of PLABWIN10: Displaying the Azure infrastructure web page.">
+                <figcaption>Figure 1.3 Screenshot of PLABWIN10: Displaying the Azure infrastructure web page.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> The page may take a couple of minutes to load.</div>
+        </div>
+        
+        <div class="question">
+            <h4>Step 4</h4>
+            <p>In <b>Microsoft Edge,</b> the interactive map can be used to explore the different locations of Azure Data Centers.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-5.jpg?v=62" alt="Figure 1.4 Screenshot of PLABWIN10: Displaying the different Azure regions and data centers.">
+                <figcaption>Figure 1.4 Screenshot of PLABWIN10: Displaying the different Azure regions and data centers.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> The different regions and locations of the Azure datacenters are displayed. The web page also contains more information regarding the different regions. The website is updated on a regular basis and may vary to the screenshot.</div>
+        </div>
+        
+        <div class="question">
+            <p>Keep <b>Microsoft Edge</b> browser window open.</p>
+        </div>
+        
+        <h3>Task 2 - Microsoft Azure Pricing Calculator</h3>
+        <p>Creating resources on a Cloud service provider involves a specific cost. Companies need to assess the costs involved when planning to migrate resources to a Cloud Service provider. Any resource that is created will have a specific cost associated with it, and the subscription will be charged according to the consumption of the specific resource on a pay-as-you-go billing methodology. In this task, the Azure pricing calculator will be used to investigate the costs involved in the hosting of resources on the Azure platform.</p>
+        
+        <div class="question">
+            <h4>Step 1</h4>
+            <p>In <b>Microsoft Edge,</b> open a new tab and browse to the following website:</p>
+            <pre><code>https://azure.microsoft.com/en-us/pricing/calculator</code></pre>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-6.jpg?v=62" alt="Figure 1.5 Screenshot of PLABWIN10: Displaying the Azure Pricing Calculator website.">
+                <figcaption>Figure 1.5 Screenshot of PLABWIN10: Displaying the Azure Pricing Calculator website.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 2</h4>
+            <p>In the <b>Microsoft Edge</b> browser, scroll down and select <b>Virtual Machines.</b></p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-7.jpg?v=62" alt="Figure 1.6 Screenshot of PLABWIN10: Displaying the Azure pricing calculator in Microsoft Edge.">
+                <figcaption>Figure 1.6 Screenshot of PLABWIN10: Displaying the Azure pricing calculator in Microsoft Edge.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 3</h4>
+            <p>In <b>Microsoft Edge,</b> select <b>View</b> in the <b>Virtual Machine added</b> pop-up window.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-8.jpg?v=62" alt="Figure 1.7 Screenshot of PLABWIN10: Displaying the Azure Pricing calculator website, and selecting View to display a virtual machine's pricing.">
+                <figcaption>Figure 1.7 Screenshot of PLABWIN10: Displaying the Azure Pricing calculator website, and selecting View to display a virtual machine's pricing.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 4</h4>
+            <p>In <b>Microsoft Edge</b> in the <b>Region</b> section, change the selection to <b>UK South</b>.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-9.jpg?v=62" alt="Figure 1.8 Screenshot of PLABWIN10: Displaying changing the region to display a virtual machine's costing in Microsoft Azure.">
+                <figcaption>Figure 1.8 Screenshot of PLABWIN10: Displaying changing the region to display a virtual machine's costing in Microsoft Azure.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> The different regions in which resources can be created in Azure are displayed. The region can be changed according to your location. For the purpose of the exercise, the <b>UK South</b> region will be used.</div>
+        </div>
+        
+        <div class="question">
+            <h4>Step 5</h4>
+            <p>In the <b>Instance</b> section change the size to the following:</p>
+            <pre><code>D8d v4: 8 vCPUs, 32 GB RAM, 300 GB Temporary storage</code></pre>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-10.jpg?v=62" alt="Figure 1.9 Screenshot of PLABWIN10: Displaying changing the size of the Virtual Machine.">
+                <figcaption>Figure 1.9 Screenshot of PLABWIN10: Displaying changing the size of the Virtual Machine.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> Different Virtual machine sizes have different costs. A company can use the pricing calculator to estimate the amount a specific virtual machine will cost per month, depending on the resource utilization.</div>
+        </div>
+        
+        <div class="question">
+            <h4>Step 6</h4>
+            <p>In <b>Microsoft Edge,</b> scroll to the bottom of the page to the <b>Estimated monthly cost</b> section.</p>
+            <p>The default currency will be <b>US Dollar</b> ($).</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-11.jpg?v=62" alt="Figure 1.10 Screenshot of PLABWIN10: Displaying the currency drop-down for the Azure pricing calculator.">
+                <figcaption>Figure 1.10 Screenshot of PLABWIN10: Displaying the currency drop-down for the Azure pricing calculator.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 7</h4>
+            <p>Select <b>United Kingdom - Pound</b> from the drop-down.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-12.jpg?v=62" alt="Figure 1.11 Screenshot of PLABWIN10: Displaying changing currency for the Azure pricing calculator.">
+                <figcaption>Figure 1.11 Screenshot of PLABWIN10: Displaying changing currency for the Azure pricing calculator.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> The Azure pricing calculator's currency can be changed according to a specific currency to get a better understanding of the cost involved when creating resources on the Azure platform. For this lab exercise, it will be changed to British pounds.</div>
+        </div>
+        
+        <div class="question">
+            <h4>Step 8</h4>
+            <p>Close the <b>Microsoft Edge</b> browser.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-13.jpg?v=62" alt="Figure 1.12 Screenshot of PLABWIN10: Displaying closing the Microsoft Edge browser.">
+                <figcaption>Figure 1.12 Screenshot of PLABWIN10: Displaying closing the Microsoft Edge browser.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> Leave the <b>PLABWIN10</b> in its current state and move on to the next task.</div>
+        </div>
+        
+        <h3>Task 3 - Amazon Web Services (AWS) Datacentres & Regions</h3>
+        <p>Amazon Web Services is another public Cloud Service provider that can be used to create specific cloud resources. Amazon Web Services (AWS) are available in different countries and regions. In this task, the different countries and regions where AWS is available will be explored.</p>
+        
+        <div class="question">
+            <h4>Step 1</h4>
+            <p>From the <b>Taskbar,</b> open <b>Microsoft Edge.</b></p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-14.jpg?v=62" alt="Figure 1.13 Screenshot of PLABWIN10: Displaying opening Microsoft Edge from the Taskbar.">
+                <figcaption>Figure 1.13 Screenshot of PLABWIN10: Displaying opening Microsoft Edge from the Taskbar.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 2</h4>
+            <p>In <b>Microsoft Edge,</b> open a new tab and browse to the following website:</p>
+            <pre><code>https://aws.amazon.com/about-aws/global-infrastructure/regions_az/</code></pre>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-15.jpg?v=62" alt="Figure 1.14 Screenshot of PLABWIN10: Displaying the Microsoft Edge web browser with the AWS website open.">
+                <figcaption>Figure 1.14 Screenshot of PLABWIN10: Displaying the Microsoft Edge web browser with the AWS website open.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> When prompted, select <b>Accept all</b> in the pop-up window.</div>
+        </div>
+        
+        <div class="question">
+            <h4>Step 3</h4>
+            <p>In <b>Microsoft Edge,</b> click <b>Europe</b> under the <b>Region Maps and Edge Networks</b> section.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-16.jpg?v=62" alt="Figure 1.15 Screenshot of PLABWIN10: Displaying the AWS Region Maps and Edge Networks.">
+                <figcaption>Figure 1.15 Screenshot of PLABWIN10: Displaying the AWS Region Maps and Edge Networks.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 4</h4>
+            <p>Scroll down on the website and notice the different available regions for AWS Data Centers.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-17.jpg?v=62" alt="Figure 1.16 Screenshot of PLABWIN10: Displaying different AWS Regions and Edge Networks in Europe/Middle East/Africa.">
+                <figcaption>Figure 1.16 Screenshot of PLABWIN10: Displaying different AWS Regions and Edge Networks in Europe/Middle East/Africa.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> By browsing the website, the specific Regions, Availability Zones, and Local Zones that are available can be explored.</div>
+        </div>
+        
+        <div class="question">
+            <h4>Step 5</h4>
+            <p>Close the <b>Microsoft Edge</b> browser.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-18.jpg?v=62" alt="Figure 1.17 Screenshot of PLABWIN10: Displaying closing the Microsoft Edge browser.">
+                <figcaption>Figure 1.17 Screenshot of PLABWIN10: Displaying closing the Microsoft Edge browser.</figcaption>
+            </figure>
+        </div>
+        
+        <h3>Task 4 - Amazon Web Services Pricing Calculator</h3>
+        <p>Creating resources on a Cloud Service provider involves a specific costing structure. Specific costs are associated with different resources that are created. A company that considers migrating its resources can use a cloud service provider’s pricing calculator to determine an estimated cost for the specific resources. In this task, the Amazon Web Services pricing calculator will be used to determine the cost for a specific resource being hosted on the AWS platform.</p>
+        
+        <div class="question">
+            <h4>Step 1</h4>
+            <p>Ensure you are connected to <button type="button" class="exercise-content-device-link btn btn-link p-0 border-0 align-top">PLABWIN10</button>. Open the <b>Microsoft Edge</b> browser, and browse to the following URL:</p>
+            <pre><code>https://calculator.aws/</code></pre>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-19.jpg?v=62" alt="Figure 1.18 Screenshot of PLABWIN10: Displaying browsing to the AWS Pricing calculator website.">
+                <figcaption>Figure 1.18 Screenshot of PLABWIN10: Displaying browsing to the AWS Pricing calculator website.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 2</h4>
+            <p>In the <b>Select your cookie preferences</b> pop-up window, select <b>Accept all</b>.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-20.jpg?v=62" alt="Figure 1.19 Screenshot of PLABWIN10: Displaying the AWS pricing calculator website.">
+                <figcaption>Figure 1.19 Screenshot of PLABWIN10: Displaying the AWS pricing calculator website.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 3</h4>
+            <p>In the <b>Microsoft Edge</b> browser, click <b>Create estimate</b>.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-21.jpg?v=62" alt="Figure 1.20 Screenshot of PLABWIN10: Displaying selecting Create estimate on the AWS pricing calculator webpage.">
+                <figcaption>Figure 1.20 Screenshot of PLABWIN10: Displaying selecting Create estimate on the AWS pricing calculator webpage.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 4</h4>
+            <p>In the <b>Microsoft Edge</b> browser, scroll down to <b>Amazon EC2</b> and select <b>Configure</b>.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-22.jpg?v=62" alt="Figure 1.21 Screenshot of PLABWIN10: Displaying selecting Configure on the Amazon EC2 section in the Amazon Web Services pricing calculator webpage.">
+                <figcaption>Figure 1.21 Screenshot of PLABWIN10: Displaying selecting Configure on the Amazon EC2 section in the Amazon Web Services pricing calculator webpage.</figcaption>
+            </figure>
+        </div>
+        
+        <div class="question">
+            <h4>Step 5</h4>
+            <p>In the <b>Region</b> drop-down menu, select <b>Europe (London)</b>.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-23.jpg?v=62" alt="Figure 1.22 Screenshot of PLABWIN10: Displaying selecting EU(London) from the AWS pricing calculator webpage.">
+                <figcaption>Figure 1.22 Screenshot of PLABWIN10: Displaying selecting EU(London) from the AWS pricing calculator webpage.</figcaption>
+            </figure>
+            <div class="note"><b>Alert:</b> This step may not be required.</div>
+        </div>
+        
+        <div class="question">
+            <h4>Step 6</h4>
+            <p>In the <b>Confirm region change</b> pop-up window, select <b>Change Region</b>.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-24.jpg?v=62" alt="Figure 1.23 Screenshot of PLABWIN10: Displaying changing the region of the AWS pricing calculator.">
+                <figcaption>Figure 1.23 Screenshot of PLABWIN10: Displaying changing the region of the AWS pricing calculator.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> Depending on the region you reside in, it can be changed accordingly. For the purpose of the lab, the <b>EU (London)</b> region will be used.</div>
+        </div>
+        
+        <div class="question">
+            <h4>Step 7</h4>
+            <p>Scroll to the middle of the window without changing any parameters. You can see that Amazon is providing different costing options based on pre-defined specifications.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-25.jpg?v=62" alt="Figure 1.24 Screenshot of PLABWIN10: Displaying changing the operating system on the AWS pricing calculator webpage.">
+                <figcaption>Figure 1.24 Screenshot of PLABWIN10: Displaying changing the operating system on the AWS pricing calculator webpage.</figcaption>
+            </figure>
+            <div class="note"><b>Note:</b> You can change the specifications of the EC2 instance to regenerate estimate figures. Several different operating systems are available with different price ranges. A company can select the specific operating system and estimate the cost per month for the operating system.</div>
+        </div>
+        
+        <div class="question">
+            <h4>Step 8</h4>
+            <p>Close the <b>Microsoft Edge</b> browser.</p>
+            <figure>
+                <img src="../../authenticated/images/N10-008/image-m20-c-26.jpg?v=62" alt="Figure 1.25 Screenshot of PLABWIN10: Displaying closing the Microsoft Edge browser.">
+                <figcaption>Figure 1.25 Screenshot of PLABWIN10: Displaying closing the Microsoft Edge browser.</figcaption>
+            </figure>
+        </div>
+    </div>
+</body>
+</html>
